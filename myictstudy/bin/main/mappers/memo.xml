@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.ictedu.myictstudy.dao.Memodao">
+<insert id="add" parameterType="memovo">
+    INSERT INTO memo (num, mtitle, mcontent, mwriter, mdate)
+    VALUES (
+        seq_memo.nextval,
+        #{mtitle, jdbcType=VARCHAR},
+        #{mcontent, jdbcType=VARCHAR},
+        #{mwriter, jdbcType=VARCHAR},
+        SYSDATE
+    )
+</insert>
+	<select id="list" resultType="memovo">
+		select * from memo order by 1 desc
+	</select>
+	<select id="detail" resultType="memovo" parameterType="int">
+		select * from memo where num=#{num}
+	</select>
+	<delete id="del" parameterType="int">
+		delete from memo where num=#{num}
+	</delete>
+</mapper>
