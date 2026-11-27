@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+   <Resource name="jdbc/myora"
+           auth="Container"
+           type="javax.sql.DataSource"
+           driverClassName="oracle.jdbc.OracleDriver"
+           url="jdbc:oracle:thin:@Localhost:1521/FREEPDB1"
+           username="mypass"
+           password="mypass"
+           maxTotal="20"
+        maxIdle="10"
+        maxWaitMillis="-1"
+   />
+</Context>
+<!-- DB커넥션 풀을 연결해주는것 -->
